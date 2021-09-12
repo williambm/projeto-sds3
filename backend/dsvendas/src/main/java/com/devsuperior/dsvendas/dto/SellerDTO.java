@@ -1,0 +1,41 @@
+package com.devsuperior.dsvendas.dto;
+
+import com.devsuperior.dsvendas.entities.Seller;
+
+import java.io.Serializable;
+
+public class SellerDTO implements Serializable {
+
+    private Long id;
+    private String name;
+
+    public SellerDTO() {
+    }
+
+    public SellerDTO(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    //Criamos um construtor que capta a entidade Seller que é retornada do JPA
+    public SellerDTO(Seller entity) {
+        this.id = entity.getId();
+        this.name = entity.getName();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
